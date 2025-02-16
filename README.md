@@ -1,16 +1,20 @@
-# Features
+# 📌 Features
 
-## 1. DishType Management:
+#### 🍽 DishType Management
 
-Easily manage and categorize dishes with the DishType table.
-Add, edit, and delete dish types to organize the menu efficiently.
+* Seamlessly organize your menu by categorizing dishes into different types.
+* Add, modify, and remove dish types to keep your menu well-structured.
 
-## 2. Dish Management:
+#### 🥘 Dish Management
 
-Create, update, and delete dishes with essential details such as name, description, and price.
-Associate dishes with specific DishTypes.
+* Easily create and update dishes with key details like name, description, and price.
+* Link each dish to a specific category for better menu organization.
+* Remove outdated or discontinued dishes in just a few clicks.
 
-## 2. Cook Management:
+#### 👨‍🍳 Cook Management
 
-Efficiently manage cooks with the Cook table.
-Add, edit, and remove cooks responsible for preparing various dishes in the kitchen.
+* Maintain a structured list of kitchen staff with the Cook database.
+* Assign cooks to specific dishes or categories for efficient kitchen workflow.
+* Update cook details or remove inactive staff as needed.
+
+#### 🚀 Streamline your kitchen operations with an intuitive management system!
