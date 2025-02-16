@@ -26,4 +26,4 @@
 
 To load initial sample data into your database, you can use the following command:
 
-`python manage.py loaddata test_data.json`
+1. [ ] python manage.py loaddata kitchen_db_data.json
