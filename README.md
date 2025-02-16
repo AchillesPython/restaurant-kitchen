@@ -25,4 +25,5 @@
 ## ⚙️ Loading Initial Data (Optional)
 
 To load initial sample data into your database, you can use the following command:
+
 `python manage.py loaddata test_data.json`
