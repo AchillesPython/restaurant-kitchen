@@ -1,0 +1,25 @@
+{% extends "layouts/base-presentation.html" %}
+{% load crispy_forms_filters %}
+
+
+{% block content %}
+  <h1>Cook List<a class="btn btn-primary" style="float: right" href="{% url 'kitchen:cook-create' %}">Create</a></h1>
+  {% if cook_list %}
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Full name</th>
+        <th>Yars of experience</th>
+      </tr>
+      {% for cook in cook_list %}
+        <tr>
+          <td>{{ cook.id }}</td>
+          <td><a href="{% url 'kitchen:cook-detail' pk=cook.id %}">{{ cook.username }} {% if user == cook %} (Me){% endif %}</a></td>
+          <td>{{ cook.first_name }} {{ cook.last_name }}</td>
+          <td>{{ cook.years_of_experience }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+{% endblock %}

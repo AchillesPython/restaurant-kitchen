@@ -1,0 +1,7 @@
+{% extends "layouts/base-presentation.html" %}
+
+{% block content %}
+  <p class="text-danger">Logged out!</p>
+  <br>
+  <a href="{% url 'login'%}" class="btn btn-primary btn-lg ms-2">Click here to login again.</a>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layouts/base-presentation.html" %}
+
+{% block content %}
+  <h1>Delete Cook</h1>
+<p>Are you sure want to delete cook : <strong class="larger-text">{{ cook }}</strong> ?</p>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Yes, delete" class="btn btn-danger" >
+  </form>
+
+{% endblock %}

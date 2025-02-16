@@ -1,0 +1,18 @@
+{% extends "layouts/base-presentation.html" %}
+
+{% block content %}
+<h1>Dish name: {{dish.name}}
+  <a class="btn btn-danger link-to-page" href="{% url 'kitchen:dish-delete' pk=dish.id %}" style="margin-left: 10px;">Delete</a>
+  <a class="btn btn-primary" href="{% url 'kitchen:dish-update' pk=dish.id %}" style="margin-left: 50px;">Edit</a>
+</h1>
+  <p><strong>Price: </strong>{{ dish.price }}</p>
+  <p><strong>Dish Type: </strong>{{ dish.dish_type }}</p>
+  <div class="nl-3">
+    <h3>Cooks: </h3>
+    {% for cook in dish.cooks.all %}
+      <hr>
+      <p class="text-muted">{{cook.id}}</p>
+      <p>{{ cook.first_name }} {{ cook.last_name }} {{ cook.years_of_experience }}</p>
+    {% endfor %}
+  </div>
+{% endblock %}

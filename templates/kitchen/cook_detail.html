@@ -1,0 +1,41 @@
+{% extends "layouts/base-presentation.html" %}
+{% block content %}
+  <h1
+      class="pb-2 border-bottom"> Cook name: {{cook.first_name}} {{ cook.last_name }}
+    <a href="{% url 'kitchen:cook-delete' pk=cook.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
+    <a href="{% url 'kitchen:cook-update' pk=cook.id %}" class="btn btn-secondary link-to-page">
+      Edit
+    </a>
+  </h1>
+  <h3 class="pb-2 border-bottom">Cook experience: {{ cook.years_of_experience }}
+    year{{ cook.years_of_experience|pluralize }}</h3>
+  <hr>
+  <h3>{{ cook.username.title }} can cook following dishes:</h3>
+  <hr>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Dish title</th>
+        <th scope="col">Dish type</th>
+        <th scope="col">Dish price</th>
+        <th scope="col">Dish description</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for dish in cook.dishes.all %}
+        <tr>
+          <td>{{ dish.id }}</td>
+          <td><a class="text-muted" href="{% url 'kitchen:dish-detail' pk=dish.id %}">{{ dish.name }}</a></td>
+          <td>{{ dish.dish_type }}</td>
+          <td>{{ dish.price }}</td>
+          <td>{{ dish.description }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

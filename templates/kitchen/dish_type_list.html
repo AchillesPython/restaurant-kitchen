@@ -1,0 +1,39 @@
+{% extends "layouts/base-presentation.html" %}
+{% load crispy_forms_filters %}
+
+{% block title %} Dish Type List {% endblock title %}
+
+{% block content %}
+
+  <div class="container">
+    <h1 class="display-3">Dish Type List<a class="btn btn-primary" style="float: right" href="{% url 'kitchen:dish_type-create' %}">Create</a></h1>
+
+    {% if dish_type_list %}
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead class="thead-light">
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for dish_type in dish_type_list %}
+              <tr>
+                <td>{{ dish_type.id }}</td>
+                <td>{{ dish_type.name }}</td>
+                <td>
+                  <a class="btn btn-warning btn-sm" href="{% url 'kitchen:dish_type-update' pk=dish_type.id %}">Update</a>
+                  <a class="btn btn-danger btn-sm" href="{% url 'kitchen:dish_type-delete' pk=dish_type.id %}">Delete</a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p class="lead">There are no dish types in the service.</p>
+    {% endif %}
+  </div>
+{% endblock %}
