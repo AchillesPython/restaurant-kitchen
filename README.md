@@ -20,4 +20,4 @@
 #### 🚀 Streamline your kitchen operations with an intuitive management system!
 
 ## 🗂 [The structure of the database]():
-![Alt text]![diagram.png](static/pages/diagram.png)
+![diagram.png](static/pages/diagram.png)
