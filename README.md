@@ -1,4 +1,4 @@
-# 📌 Features
+# 📌 [Features]()
 
 #### 🍽 DishType Management
 
@@ -18,3 +18,6 @@
 * Update cook details or remove inactive staff as needed.
 
 #### 🚀 Streamline your kitchen operations with an intuitive management system!
+
+## 🗂 [The structure of the database]():
+![Screenshot_1.png](Screenshot_1.png)
