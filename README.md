@@ -1,4 +1,4 @@
-# 📌 [Features]()
+# 📌 Features
 
 #### 🍽 DishType Management
 
@@ -19,5 +19,5 @@
 
 #### 🚀 Streamline your kitchen operations with an intuitive management system!
 
-## 🗂 [The structure of the database]():
+## 🗂 The structure of the database:
 ![diagram.png](static/pages/diagram.png)
