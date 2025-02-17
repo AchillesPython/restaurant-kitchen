@@ -26,8 +26,5 @@
 
 To load initial sample data into your database, you can use the following command:
 
-```bash
-python manage.py loaddata kitchen_db_data.json
+```bash python manage.py loaddata kitchen_db_data.json```
 
-DEMO
-![home.png](static/pages/home.png)
