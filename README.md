@@ -34,3 +34,4 @@ python manage.py loaddata kitchen_db_data.json
 ![home.png](static/pages/home.png)
 ![dish_create.png](static/pages/dish_create.png)
 ![dish_update.png](static/pages/dish_update.png)
+![dish_type_create.png](static/pages/dish_type_create.png)
