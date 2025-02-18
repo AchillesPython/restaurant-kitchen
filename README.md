@@ -20,6 +20,9 @@
 #### 🚀 Streamline your kitchen operations with an intuitive management system!
 
 ## 🗂 The structure of the database:
+
+#### Django project for restaurant kitchen service
+
 ![diagram.png](static/pages/diagram.png)
 
 ## ⚙️ Loading Initial Data (Optional)
