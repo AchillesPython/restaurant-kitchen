@@ -25,9 +25,31 @@
 
 ![diagram.png](static/pages/diagram.png)
 
+## Installation
+#### Pyhton3 should be already installed
+```bash 
+https://github.com/AchillesPython/restaurant-kitchen.git
+```
+```bash
+cd restaurant-kitchen
+```
+```bash 
+python3 -m venv venv
+```
+```bash 
+source venv/Script/activate
+```
+```bash 
+pip install -r requirements.txt
+```
+```bash 
+python manage.py runserver
+```
+
 ## ⚙️ Loading Initial Data (Optional)
 
-To load initial sample data into your database, you can use the following command:
+
+#### To load initial sample data into your database, you can use the following command:
 
 ```bash 
 python manage.py loaddata kitchen_db_data.json
