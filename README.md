@@ -47,7 +47,6 @@ python manage.py runserver
 ```
 
 ## ⚙️ Loading Initial Data (Optional)
-
 #### To load initial sample data into your database, you can use the following command:
 
 ```bash 
