@@ -47,17 +47,11 @@ python manage.py runserver
 ```
 
 ## ⚙️ Loading Initial Data (Optional)
-
 #### To load initial sample data into your database, you can use the following command:
 
 ```bash 
 python manage.py loaddata kitchen_db_data.json
 ```
-
-DEMO
-![home.png](static/pages/home.png)
-
-
 
 ## DEMO
 ![home.png](static/pages/home.png)
@@ -68,4 +62,3 @@ DEMO
 ![cook_update.png](static/pages/cook_update.png)
 ![dish_detail.png](static/pages/dish_detail.png)
 ![login.png](static/pages/login.png)
->>>>>>> develop
