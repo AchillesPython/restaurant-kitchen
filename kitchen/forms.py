@@ -21,12 +21,12 @@ class CookForm(forms.Form):
     cook = forms.ModelMultipleChoiceField(
         queryset=get_user_model().objects.all(),
         widget=forms.CheckboxSelectMultiple,
-        required=False
+        required=False,
     )
 
     class Meta:
         model = Cook
-        fields = ['name', 'description', 'price', 'dish_type', 'cook']
+        fields = ["name", "description", "price", "dish_type", "cook"]
 
 
 class CookCreateForm(UserCreationForm):
@@ -55,12 +55,12 @@ class DishForm(forms.ModelForm):
     cook = forms.ModelMultipleChoiceField(
         queryset=get_user_model().objects.all(),
         widget=forms.CheckboxSelectMultiple,
-        required=False
+        required=False,
     )
 
     class Meta:
         model = Dish
-        fields = ['name', 'description', 'price', 'dish_type', 'cook']
+        fields = ["name", "description", "price", "dish_type", "cook"]
 
 
 class DishCreateForm(forms.ModelForm):
@@ -74,9 +74,5 @@ class DishSearchForm(forms.Form):
         max_length=63,
         required=False,
         label="",
-        widget=forms.TextInput(
-            attrs={
-                "placeholder": "Search by name"
-            }
-        )
+        widget=forms.TextInput(attrs={"placeholder": "Search by name"}),
     )

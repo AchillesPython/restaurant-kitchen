@@ -1,7 +1,13 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from django.views.generic import DetailView, CreateView, ListView, UpdateView, DeleteView
+from django.views.generic import (
+    DetailView,
+    CreateView,
+    ListView,
+    UpdateView,
+    DeleteView,
+)
 
 from kitchen.forms import (
     DishTypeForm,
@@ -69,9 +75,7 @@ class DishListView(LoginRequiredMixin, ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(DishListView, self).get_context_data(**kwargs)
         name = self.request.GET.get("name", "")
-        context["search_form"] = DishSearchForm(
-            initial={"name": name}
-        )
+        context["search_form"] = DishSearchForm(initial={"name": name})
         return context
 
     def get_queryset(self):
@@ -113,10 +117,7 @@ class CookListView(LoginRequiredMixin, ListView):
 class CookDetailView(LoginRequiredMixin, DetailView):
     model = get_user_model()
     template_name = "kitchen/cook_detail.html"
-    queryset = get_user_model().objects.prefetch_related(
-        "dishes",
-        "dishes__dish_type"
-    )
+    queryset = get_user_model().objects.prefetch_related("dishes", "dishes__dish_type")
 
 
 class CookCreateView(LoginRequiredMixin, CreateView):
@@ -134,7 +135,7 @@ class CookUpdateView(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         cook = form.save(commit=False)
         cook.dishes.clear()
-        for dish in form.cleaned_data['dishes']:
+        for dish in form.cleaned_data["dishes"]:
             cook.dishes.add(dish)
         cook.save()
         return super().form_valid(form)

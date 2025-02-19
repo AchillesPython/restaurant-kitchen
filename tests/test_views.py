@@ -19,8 +19,8 @@ class PublicDishTypeTests(TestCase):
 class PrivateDishTypeTests(TestCase):
     def setUp(self):
         self.user = get_user_model().objects.create_user(
-            username='test',
-            password='test_password',
+            username="test",
+            password="test_password",
         )
         self.client.force_login(self.user)
 
@@ -44,8 +44,8 @@ class PublicDishTest(TestCase):
 class PrivateDishTests(TestCase):
     def setUp(self):
         self.user = get_user_model().objects.create_user(
-            username='test',
-            password='test_password',
+            username="test",
+            password="test_password",
         )
         self.client.force_login(self.user)
 
@@ -60,18 +60,13 @@ class PrivateDishTests(TestCase):
             list(response.context["dish_list"]),
             list(dishes),
         )
-        self.assertTemplateUsed(response,
-                                "kitchen/dish_list.html")
+        self.assertTemplateUsed(response, "kitchen/dish_list.html")
 
     def test_search_dish_by_name(self) -> None:
         """Test that we can find Dish by name"""
         self.search_name = "test"
-        response = self.client.get(
-            DISH_URL,
-            {"name": self.search_name})
-        context_dashes = Dish.objects.filter(
-            name__icontains=self.search_name
-        )
+        response = self.client.get(DISH_URL, {"name": self.search_name})
+        context_dashes = Dish.objects.filter(name__icontains=self.search_name)
 
         self.assertEqual(response.status_code, 200)
         self.assertQuerysetEqual(
@@ -109,5 +104,4 @@ class PrivateCookTests(TestCase):
 
         self.assertEqual(new_user.first_name, form_data["first_name"])
         self.assertEqual(new_user.last_name, form_data["last_name"])
-        self.assertEqual(new_user.years_of_experience,
-                         form_data["years_of_experience"])
+        self.assertEqual(new_user.years_of_experience, form_data["years_of_experience"])
