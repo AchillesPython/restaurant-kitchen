@@ -50,7 +50,7 @@ python manage.py runserver
 #### To load initial sample data into your database, you can use the following command:
 
 ```bash 
-python manage.py loaddata kitchen_db_data.json
+python manage.py loaddata test_data.json
 ```
 
 ## DEMO
