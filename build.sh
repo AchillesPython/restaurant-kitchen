@@ -9,12 +9,11 @@ python manage.py migrate --noinput
 # Збір статичних файлів
 python manage.py collectstatic --noinput
 
-# Створення суперкористувача (тільки якщо він не існує)
+# ОБОВ'ЯЗКОВЕ створення суперкористувача (навіть якщо він існує)
 python manage.py shell -c "
 from django.contrib.auth import get_user_model;
 User = get_user_model();
-if not User.objects.filter(username='user').exists():
-    User.objects.create_superuser('user', 'admin@example.com', 'admin12345')
+User.objects.create_superuser('admin', 'admin@example.com', 'admin12345')
 "
 
 # Запуск Gunicorn
