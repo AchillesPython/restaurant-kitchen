@@ -92,10 +92,7 @@ WSGI_APPLICATION = "kitchen_service.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL', default='sqlite:///db.sqlite3'),
-        conn_max_age=600
-    )
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
 # db_from_env = dj_database_url.config(conn_max_age=500)
@@ -138,7 +135,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATIC_ROOT = "staticfiles/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
