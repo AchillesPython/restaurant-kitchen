@@ -1,0 +1,19 @@
+body {
+    margin-top: 20px;
+    background: white;
+}
+
+.sidebar-nav {
+    padding: 0;
+    list-style: none;
+}
+
+.link-to-page {
+    float: right;
+    margin: 0 2px 0 2px;
+}
+
+.navbar {
+  position: relative;
+  z-index: 1000;
+}
