@@ -1,20 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Exit on error
+set -o errexit
 
 # Встановлення залежностей
 pip install -r requirements.txt
 
-# Виконання міграцій
+# Збір статичних файлів без підтвердження
+python manage.py collectstatic --no-input
+
+# Виконання міграцій бази даних
 python manage.py migrate --noinput
 
-# Збір статичних файлів
-python manage.py collectstatic --noinput
+# Імпорт даних із файлу test_data.json
+python manage.py loaddata test_data.json
 
-# ОБОВ'ЯЗКОВЕ створення суперкористувача (навіть якщо він існує)
-python manage.py shell -c "
-from django.contrib.auth import get_user_model;
-User = get_user_model();
-User.objects.create_superuser('admin', 'admin@example.com', 'admin12345')
-"
-
-# Запуск Gunicorn
+# Запуск серверу Gunicorn
 gunicorn kitchen_service.wsgi:application
